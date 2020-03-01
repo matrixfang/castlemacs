@@ -3,6 +3,10 @@
 
 ;; ====
 ;; INIT
+(setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+                         ("melpa" . "http://elpa.emacs-china.org/melpa/")))
+
+
 
 
 ;; Package system and sources.
@@ -693,6 +697,33 @@ point reaches the beginning or end of the buffer, stop there."
 ;; Open private config file by pressing C-x and then c
 ;; Contain custom settings to private.el to ensure easy Castlemacs updates.
 (global-set-key (kbd "C-x c") (lambda () (interactive) (find-file "~/.emacs.d/private.el")))
+
+
+(use-package evil)
+
+(evil-mode 1)
+;;(set-face-background 'region "#ffffaf")
+;;  (add-hook 'evil-insert-state-entry-hook (lambda () (set-face-background 'hl-line "#121212")))
+;; (add-hook 'evil-normal-state-entry-hook (lambda () (set-face-background 'hl-line "#4e4e4e")))
+
+(setq evil-visual-state-cursor 'hbar)
+(setq evil-normal-state-cursor 'box)
+(setq evil-insert-state-cursor 'bar)
+(setq evil-emacs-state-cursor 'box)
+
+
+;; use doom-modeline
+(use-package doom-modeline
+  :init (doom-modeline-mode 1))
+(setq doom-modeline-buffer-state-icon t)
+(setq doom-modeline-height 15)
+(use-package nyan-mode
+  :if (display-graphic-p)
+  :init
+  (setq nyan-animate-nyancat nil)
+  (nyan-mode t))
+
+
 
 ;; =======
 ;; THE END
