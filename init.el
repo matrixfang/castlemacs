@@ -715,8 +715,9 @@ point reaches the beginning or end of the buffer, stop there."
 ;; use doom-modeline
 (use-package doom-modeline
   :init (doom-modeline-mode 1))
-(setq doom-modeline-buffer-state-icon t)
 (setq doom-modeline-height 15)
+(setq doom-modeline-buffer-state-icon t)
+
 (use-package nyan-mode
   :if (display-graphic-p)
   :init

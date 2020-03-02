@@ -72,3 +72,26 @@
   (load-theme 'wombat)
   (font-set)
 )
+
+;; Cycle through this set of themes
+(defvar samray-theme-list '(zenburn doom-dracula monokai sanityinc-tomorrow-eighties gruvboxm  dichromacy wombat jazz leuven solarized-light spacemacs-dark spacemacs-light light-blue))
+
+(defvar samray-current-theme nil)
+(defun samray/cycle-theme ()
+  "Cycle through a list of themes, samray-theme-list."
+  (interactive)
+  (when samray-current-theme
+    (setq samray-theme-list (append samray-theme-list (list samray-current-theme))))
+  (setq samray-current-theme (pop samray-theme-list))
+  (load-theme  samray-current-theme t)
+  )
+
+;;; Disable theme before load a new theme
+(defadvice load-theme
+    (before theme-dont-propagate activate)
+  "Disable theme before load theme."
+  (mapc #'disable-theme custom-enabled-themes))
+
+
+
+(load-theme 'light-blue)
