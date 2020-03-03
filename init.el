@@ -1,4 +1,4 @@
-;;; -*- lexical-binding: t -*-
+
 
 
 ;; ====
@@ -33,6 +33,22 @@
 
 ;; No need to out 'ensure' everywhere, since we don't use anything else to install packages.
 (setq use-package-always-ensure t)
+
+;; Make startup faster by reducing the frequency of garbage
+;; collection.  The default is 800 kilobytes.  Measured in bytes.
+(setq gc-cons-threshold (* 50 1000 1000))
+
+;; The rest of the init file.
+
+;; Make gc pauses faster by decreasing the threshold.
+(setq gc-cons-threshold (* 2 1000 1000))
+
+
+(use-package benchmark-init
+  :ensure t
+  :config
+  ;; To disable collection of benchmark data after init is done.
+  (add-hook 'after-init-hook 'benchmark-init/deactivate))
 
 
 ;; Pass system shell environment to Emacs. This is important primarily for shell inside Emacs, but also things like Org mode export to Tex PDF don't work, since it relies on running external command pdflatex, which is loaded from PATH.
@@ -204,6 +220,7 @@
 
 ;; Show parens and other pairs.
 (use-package smartparens
+  :defer 4
   :diminish
   :config
   (require 'smartparens-config)
@@ -714,17 +731,10 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;; use doom-modeline
 (use-package doom-modeline
-  :init (doom-modeline-mode 1))
-(setq doom-modeline-height 15)
-(setq doom-modeline-buffer-state-icon t)
-
-(use-package nyan-mode
-  :if (display-graphic-p)
   :init
-  (setq nyan-animate-nyancat nil)
-  (nyan-mode t))
-
-
-
+  (doom-modeline-mode 1)
+  (setq doom-modeline-height 30)
+  )
+;;(setq doom-modeline-buffer-state-icon t)
 ;; =======
 ;; THE END

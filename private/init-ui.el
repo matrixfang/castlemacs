@@ -63,18 +63,21 @@
 
 (defun day ()
   (interactive)
-  (load-theme 'leuven)
+  (load-theme day-theme)
   (font-set)
 )
 
 (defun dark ()
   (interactive)
-  (load-theme 'wombat)
+  (load-theme dark-theme)
   (font-set)
 )
 
 ;; Cycle through this set of themes
-(defvar samray-theme-list '(zenburn doom-dracula monokai sanityinc-tomorrow-eighties gruvboxm  dichromacy wombat jazz leuven solarized-light spacemacs-dark spacemacs-light light-blue))
+
+;; not good themes
+;; light-blue
+(defvar samray-theme-list '(solarized-light tsdh-light organic-green spacemacs-light spacemacs-dark zenburn doom-dracula monokai sanityinc-tomorrow-eighties gruvboxm  dichromacy wombat jazz leuven  ))
 
 (defvar samray-current-theme nil)
 (defun samray/cycle-theme ()
@@ -94,4 +97,4 @@
 
 
 
-(load-theme 'light-blue)
+(load-theme 'organic-green t)
