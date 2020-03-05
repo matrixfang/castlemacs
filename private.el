@@ -46,13 +46,6 @@
   (setq org-startup-indented t)
   (setq-default neo-show-hidden-files t)
 
-;;
-(use-package page-break-lines
-  :ensure t
-  :init
-  (turn-on-page-break-lines-mode)
-)
-
 
 ;;禁止emacs一个劲的叫
 (setq visible-bell t);

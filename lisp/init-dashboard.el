@@ -1,4 +1,9 @@
-
+;; use break lines
+(use-package page-break-lines
+  :ensure t
+  :init
+  (turn-on-page-break-lines-mode)
+)
 
 ;; dashboard
 (use-package dashboard
