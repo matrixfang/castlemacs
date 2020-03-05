@@ -12,6 +12,7 @@
   (setq dashboard-set-heading-icons t
         dashboard-set-file-icons t
         dashboard-set-navigator t
+        dashboard-center-content t
         dashboard-startup-banner (expand-file-name "logo.png" user-emacs-directory)
         dashboard-heading-icons '((recents   . "file-text")
                                    (bookmarks . "bookmark")

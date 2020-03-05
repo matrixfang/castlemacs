@@ -42,8 +42,7 @@
 
 ;; The rest of the init file.
 
-;; Make gc pauses faster by decreasing the threshold.
-(setq gc-cons-threshold (* 2 1000 1000))
+
 
 
 (use-package benchmark-init
@@ -205,7 +204,6 @@
 ;; Pretty icons
 (use-package all-the-icons)
 ;; MUST DO M-x all-the-icons-install-fonts after
-
 
 ;; Hide toolbar and scroll bar
 (tool-bar-mode -1)
@@ -738,9 +736,13 @@ point reaches the beginning or end of the buffer, stop there."
   (setq doom-modeline-height 30)
   )
 
-(push  (expand-file-name "lisp" user-emacs-directory) load-path)
 
+;; dashboard
+(push  (expand-file-name "lisp" user-emacs-directory) load-path)
 (require 'init-dashboard)
+
+;; Make gc pauses faster by decreasing the threshold.
+(setq gc-cons-threshold (* 2 1000 1000))
 ;;(setq doom-modeline-buffer-state-icon t)
 ;; =======
 ;; THE END
