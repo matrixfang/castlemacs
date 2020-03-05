@@ -30,6 +30,8 @@
   (package-install 'use-package))
 (eval-when-compile (require 'use-package))
 
+;;;
+(setq exec-path-from-shell-check-startup-files nil)
 
 ;; No need to out 'ensure' everywhere, since we don't use anything else to install packages.
 (setq use-package-always-ensure t)
@@ -735,6 +737,10 @@ point reaches the beginning or end of the buffer, stop there."
   (doom-modeline-mode 1)
   (setq doom-modeline-height 30)
   )
+
+(push  (expand-file-name "lisp" user-emacs-directory) load-path)
+
+(require 'init-dashboard)
 ;;(setq doom-modeline-buffer-state-icon t)
 ;; =======
 ;; THE END

@@ -46,6 +46,9 @@
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(objed-cursor-color "#ff5555")
+ '(org-agenda-files
+   (quote
+    ("~/org/become_a_hacker.org" "~/org/english_learning.org" "~/org/gtd.org" "~/org/math.org" "~/org/entertainments.org" "~/org/notes.org" "~/org/tasks.org" "~/org/projects.org" "~/org/wtasks.org" "~/org/journal.org" "~/org/wjournal.org" "~/org/birthday.org")))
  '(org-src-block-faces
    (quote
     (("emacs-lisp"
@@ -54,7 +57,7 @@
       (:foreground "gray50")))))
  '(package-selected-packages
    (quote
-    (benchmark-init organic-green-theme kaolin-themes solarized-theme color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow gruvbox-theme green-screen-theme zenburn-theme monokai-theme leuven-theme doom-themes dracula-theme dracula doom-monakai evil-leader nyan-mode doom-modeline evil emmet-mode web-mode markdown-mode haml-mode yaml-mode define-word powerthesaurus flyspell-correct-popup flyspell-correct company shell-pop git-gutter magit counsel-projectile ivy-rich avy flx smex counsel swiper ivy projectile multiple-cursors visual-regexp move-text expand-region which-key vi-tilde-fringe neotree rich-minority smartparens all-the-icons undo-tree simpleclip exec-path-from-shell use-package)))
+    (dashboard benchmark-init organic-green-theme kaolin-themes solarized-theme color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow gruvbox-theme green-screen-theme zenburn-theme monokai-theme leuven-theme doom-themes dracula-theme dracula doom-monakai evil-leader nyan-mode doom-modeline evil emmet-mode web-mode markdown-mode haml-mode yaml-mode define-word powerthesaurus flyspell-correct-popup flyspell-correct company shell-pop git-gutter magit counsel-projectile ivy-rich avy flx smex counsel swiper ivy projectile multiple-cursors visual-regexp move-text expand-region which-key vi-tilde-fringe neotree rich-minority smartparens all-the-icons undo-tree simpleclip exec-path-from-shell use-package)))
  '(pdf-view-midnight-colors (cons "#f8f8f2" "#282a36"))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")

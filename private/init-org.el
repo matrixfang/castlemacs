@@ -218,7 +218,7 @@
                                "~/org/math.org"
                                "~/org/entertainments.org"
 
-                               "~/org/organizer.org"
+                               "~/org/alpha.org"
 
                                "~/org/notes.org"
                                "~/org/tasks.org"
