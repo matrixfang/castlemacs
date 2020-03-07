@@ -573,8 +573,8 @@ point reaches the beginning or end of the buffer, stop there."
   (set-face-background 'git-gutter:modified 'nil)   ;; background color
   (set-face-foreground 'git-gutter:added "green4")
   (set-face-foreground 'git-gutter:deleted "red"))
-
-
+(custom-set-variables
+ '(git-gutter:hide-gutter t))
 ;; ========
 ;; TERMINAL
 
@@ -717,8 +717,9 @@ point reaches the beginning or end of the buffer, stop there."
 
 
 (use-package evil)
-
 (evil-mode 1)
+
+
 ;;(set-face-background 'region "#ffffaf")
 ;;  (add-hook 'evil-insert-state-entry-hook (lambda () (set-face-background 'hl-line "#121212")))
 ;; (add-hook 'evil-normal-state-entry-hook (lambda () (set-face-background 'hl-line "#4e4e4e")))
@@ -739,6 +740,10 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;; dashboard
 (push  (expand-file-name "lisp" user-emacs-directory) load-path)
+(require 'init-core)
+(require 'init-rest)
+;(require 'init-org)
+;(require 'init-ui)
 (require 'init-dashboard)
 
 ;; Make gc pauses faster by decreasing the threshold.

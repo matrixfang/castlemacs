@@ -1,14 +1,10 @@
 ;; use break lines
-(use-package page-break-lines
-  :ensure t
-  :init
-  (turn-on-page-break-lines-mode)
-)
 
+(use-package page-break-lines)
 ;; dashboard
 (use-package dashboard
   :ensure t
-  :init
+    :init
   (setq dashboard-set-heading-icons t
         dashboard-set-file-icons t
         dashboard-set-navigator t
@@ -23,9 +19,16 @@
                                                    :v-adjust -0.05
                                                    :face 'font-lock-keyword-face)
         )
+
   :config
   (dashboard-setup-startup-hook)
-
 )
+
+
+;; (use-package dashboard
+;;   :ensure t
+;;   :config
+;;   (dashboard-setup-startup-hook))
+
 
 (provide 'init-dashboard)
