@@ -716,21 +716,6 @@ point reaches the beginning or end of the buffer, stop there."
 (global-set-key (kbd "C-x c") (lambda () (interactive) (find-file "~/.emacs.d/private.el")))
 
 
-(use-package evil)
-(evil-mode 1)
-
-
-;;(set-face-background 'region "#ffffaf")
-;;  (add-hook 'evil-insert-state-entry-hook (lambda () (set-face-background 'hl-line "#121212")))
-;; (add-hook 'evil-normal-state-entry-hook (lambda () (set-face-background 'hl-line "#4e4e4e")))
-
-(setq evil-visual-state-cursor 'hbar)
-(setq evil-normal-state-cursor 'box)
-(setq evil-insert-state-cursor 'bar)
-(setq evil-emacs-state-cursor 'box)
-
-
-;; use doom-modeline
 (use-package doom-modeline
   :init
   (doom-modeline-mode 1)
@@ -745,9 +730,12 @@ point reaches the beginning or end of the buffer, stop there."
 ;(require 'init-org)
 ;(require 'init-ui)
 (require 'init-dashboard)
+(require 'init-python)
+(require 'init-evil)
 
 ;; Make gc pauses faster by decreasing the threshold.
-(setq gc-cons-threshold (* 2 1000 1000))
+(setq gc-cons-threshold (* 5 1024 1024))
+(evil-insert-state)
 ;;(setq doom-modeline-buffer-state-icon t)
 ;; =======
 ;; THE END

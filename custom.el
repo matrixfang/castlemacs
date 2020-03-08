@@ -19,6 +19,7 @@
  '(fci-rule-color "#515151")
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(frame-background-mode (quote dark))
+ '(git-gutter:hide-gutter t)
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
  '(highlight-symbol-colors
    (quote
@@ -57,7 +58,7 @@
       (:foreground "gray50")))))
  '(package-selected-packages
    (quote
-    (dashboard benchmark-init organic-green-theme kaolin-themes solarized-theme color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow gruvbox-theme green-screen-theme zenburn-theme monokai-theme leuven-theme doom-themes dracula-theme dracula doom-monakai evil-leader nyan-mode doom-modeline evil emmet-mode web-mode markdown-mode haml-mode yaml-mode define-word powerthesaurus flyspell-correct-popup flyspell-correct company shell-pop git-gutter magit counsel-projectile ivy-rich avy flx smex counsel swiper ivy projectile multiple-cursors visual-regexp move-text expand-region which-key vi-tilde-fringe neotree rich-minority smartparens all-the-icons undo-tree simpleclip exec-path-from-shell use-package)))
+    (system-packages fcitx elpy live-py-mode dashboard benchmark-init organic-green-theme kaolin-themes solarized-theme color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow gruvbox-theme green-screen-theme zenburn-theme monokai-theme leuven-theme doom-themes dracula-theme dracula doom-monakai evil-leader nyan-mode doom-modeline evil emmet-mode web-mode markdown-mode haml-mode yaml-mode define-word powerthesaurus flyspell-correct-popup flyspell-correct company shell-pop git-gutter magit counsel-projectile ivy-rich avy flx smex counsel swiper ivy projectile multiple-cursors visual-regexp move-text expand-region which-key vi-tilde-fringe neotree rich-minority smartparens all-the-icons undo-tree simpleclip exec-path-from-shell use-package)))
  '(pdf-view-midnight-colors (cons "#f8f8f2" "#282a36"))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
