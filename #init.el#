@@ -53,7 +53,7 @@
 
 
 ;; Pass system shell environment to Emacs. This is important primarily for shell inside Emacs, but also things like Org mode export to Tex PDF don't work, since it relies on running external command pdflatex, which is loaded from PATH.
-(use-package exec-path-from-shell
+(Use-package exec-path-from-shell
   :ensure t)
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
@@ -198,7 +198,7 @@
 
 
 ;; Nice and simple default light theme.
-;;(load-theme 'tsdh-light)
+(load-theme 'tsdh-light)
 
 
 ;; Pretty icons
@@ -573,8 +573,8 @@ point reaches the beginning or end of the buffer, stop there."
   (set-face-background 'git-gutter:modified 'nil)   ;; background color
   (set-face-foreground 'git-gutter:added "green4")
   (set-face-foreground 'git-gutter:deleted "red"))
-(custom-set-variables
- '(git-gutter:hide-gutter t))
+
+
 ;; ========
 ;; TERMINAL
 
@@ -715,49 +715,34 @@ point reaches the beginning or end of the buffer, stop there."
 ;; Contain custom settings to private.el to ensure easy Castlemacs updates.
 (global-set-key (kbd "C-x c") (lambda () (interactive) (find-file "~/.emacs.d/private.el")))
 
-;; use modeline
+
+(use-package evil)
+
+(evil-mode 1)
+;;(set-face-background 'region "#ffffaf")
+;;  (add-hook 'evil-insert-state-entry-hook (lambda () (set-face-background 'hl-line "#121212")))
+;; (add-hook 'evil-normal-state-entry-hook (lambda () (set-face-background 'hl-line "#4e4e4e")))
+
+(setq evil-visual-state-cursor 'hbar)
+(setq evil-normal-state-cursor 'box)
+(setq evil-insert-state-cursor 'bar)
+(setq evil-emacs-state-cursor 'box)
+
+
+;; use doom-modeline
 (use-package doom-modeline
   :init
   (doom-modeline-mode 1)
   (setq doom-modeline-height 30)
   )
-;; set font
-(set-default-font "Monaco-16")
-;; load file
+
+
+;; dashboard
 (push  (expand-file-name "lisp" user-emacs-directory) load-path)
-(require 'init-core)
-(require 'init-rest)
-(require 'init-org)
-(require 'init-ui)
 (require 'init-dashboard)
-(require 'init-python)
-(require 'init-evil)
-
-(synchronize-theme)
-;;(load-theme 'moe-dark)
-;; fringe settings
-(setq org-agenda-files (list "~/org/"))
-
 
 ;; Make gc pauses faster by decreasing the threshold.
-(setq gc-cons-threshold (* 5 1024 1024))
-(evil-insert-state)
-
-;;chinese
-(set-language-environment "UTF-8")
-(set-default-coding-systems 'utf-8)
-(set-buffer-file-coding-system 'utf-8-unix)
-(set-clipboard-coding-system 'utf-8-unix)
-(set-file-name-coding-system 'utf-8-unix)
-(set-keyboard-coding-system 'utf-8-unix)
-(set-next-selection-coding-system 'utf-8-unix)
-(set-selection-coding-system 'utf-8-unix)
-(set-terminal-coding-system 'utf-8-unix)
-(setq locale-coding-system 'utf-8)
-(prefer-coding-system 'utf-8)
+(setq gc-cons-threshold (* 2 1000 1000))
 ;;(setq doom-modeline-buffer-state-icon t)
 ;; =======
-
-;; work with emacsclient (emacs --daemon)
-
 ;; THE END

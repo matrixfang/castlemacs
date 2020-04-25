@@ -1,0 +1,10 @@
+(   1/7632) M-x 
+load-theme                               Load Custom theme named THEME from its file.
+midnight-mode                            Non-nil means run ‘midnight-hook’ at midnight.
+winner-mode                              Toggle Winner mode on or off.
+package-install                          Install the package PKG.
+describe-function (C-h f)                Display the full documentation of FUNCTION (a symbol).
+toggle-input-method (C-\)                Enable or disable multilingual text input method for the current buffer.
+ansi-term                                Start a terminal-emulator in a new buffer.
+samray/cycle-theme                       Cycle through a list of themes, samray-theme-list.
+day
