@@ -12,7 +12,7 @@
 ;; Package system and sources.
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-                 (not (gnutls-available-p))))
+                    (not (gnutls-available-p))))
     (proto (if no-ssl "http" "https")))
     ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
     (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
@@ -38,7 +38,7 @@
 
 ;; Make startup faster by reducing the frequency of garbage
 ;; collection.  The default is 800 kilobytes.  Measured in bytes.
-(setq gc-cons-threshold (* 50 1000 1000))
+;;(setq gc-cons-threshold (* 50 1000 1000))
 
 ;; The rest of the init file.
 
@@ -99,14 +99,26 @@
 
 
 ;; Smoother and nicer scrolling
-(setq scroll-margin 10
-   scroll-step 1
-   next-line-add-newlines nil
-   scroll-conservatively 10000
-   scroll-preserve-screen-position 1)
+;;  (setq scroll-margin 1
+;;       scroll-conservatively 0
+;;       scroll-up-aggressively 0.01
+;;       scroll-down-aggressively 0.01)
+;;     (setq-default scroll-up-aggressively 0.01
+;;                   scroll-down-aggressively 0.01)
 
-(setq mouse-wheel-follow-mouse 't)
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+;; (setq
+;;    scroll-step 1
+;;    scroll-conservatively 10000)
+
+;; (setq mouse-wheel-follow-mouse 't)
+;; (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+;; (pixel-scroll-mode)
+;; (setq pixel-dead-time 0) ; Never go back to the old scrolling behaviour.
+;; (setq pixel-resolution-fine-flag t) ; Scroll by number of pixels instead of lines (t = frame-char-height pixels).
+;; (setq mouse-wheel-scroll-amount '(1)) ; Distance in pixel-resolution to scroll each mouse wheel event.
+;; (setq mouse-wheel-progressive-speed nil) ; Progressive speed is too fast for me.
+
+
 
 
 ;; Use ESC as universal get me out of here command
@@ -502,7 +514,7 @@ point reaches the beginning or end of the buffer, stop there."
 (use-package ivy
   :diminish                             ;; don't show Ivy in minor mode list
   :config
-  (ivy-mode 1)                          ;; enable Ivy everywhere
+  (ivy-mode nil)                          ;; enable Ivy everywhere
   (setq ivy-use-virtual-buffers t)      ;; show bookmarks and recent files in buffer list
   (setq ivy-count-format "(%d/%d) ")
   (setq enable-recursive-minibuffers t)
@@ -539,7 +551,7 @@ point reaches the beginning or end of the buffer, stop there."
 ;; Make Ivy a bit more friendly by adding information to ivy buffers, e.g. description of commands in Alt-x, meta info when switching buffers, etc.
 (use-package ivy-rich
   :config
-  (ivy-rich-mode 1)
+  (ivy-rich-mode nil)
   (setq ivy-rich-path-style 'abbrev)) ;; Abbreviate paths using abbreviate-file-name (e.g. replace “/home/username” with “~”)
 
 
@@ -552,7 +564,7 @@ point reaches the beginning or end of the buffer, stop there."
   (global-set-key (kbd "s-F") 'counsel-projectile-ag))     ;; Cmd+Shift+F search in current git repository
 
 
-(setq projectile-completion-system 'ivy)             ;; Use Ivy in Projectile
+;;(setq projectile-completion-system 'ivy)             ;; Use Ivy in Projectile
 
 
 ;; ========================
@@ -740,7 +752,7 @@ point reaches the beginning or end of the buffer, stop there."
 
 
 ;; Make gc pauses faster by decreasing the threshold.
-(setq gc-cons-threshold (* 5 1024 1024))
+;;(setq gc-cons-threshold (* 5 1024 1024))
 (evil-insert-state)
 
 ;;chinese
@@ -760,4 +772,11 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;; work with emacsclient (emacs --daemon)
 
+
+;;(pdf-tools-install)
+;; 让 spacemacs mode-line 中的 Unicode 图标正确显示。
+;; (cnfonts-set-spacemacs-fallback-fonts)
 ;; THE END
+
+
+(org-babel-load-file (expand-file-name "~/org/myinit.org"))
